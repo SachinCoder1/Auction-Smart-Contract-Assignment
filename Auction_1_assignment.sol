@@ -85,4 +85,19 @@ contract Auction {
         }
     }
 
-
+    function getPersonDetails(uint256 id)
+        public
+        constant
+        returns (
+            uint256,
+            uint256,
+            address
+        )
+    {
+        return (
+            bidders[id].remainingTokens,
+            bidders[id].personId,
+            bidders[id].addr
+        );
+    }
+}
